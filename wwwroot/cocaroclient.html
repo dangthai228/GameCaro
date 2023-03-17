@@ -1,0 +1,104 @@
+<!DOCTYPE html PUBLIC"- //W3C//DTD XHTML 1.0 Strict //EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <title>CoCaro Test</title>
+    <link rel="stylesheet" href="css/site.css">
+
+    <script src="lib/msgpack5/dist/msgpack5.js"></script>
+    <script src="lib/signalr/dist/browser/signalr.min.js"></script>
+    <script src="lib/signalr-protocol-msgpack/dist/browser/signalr-protocol-msgpack.js"></script>
+    <script src="js/signalrclient.js"></script>
+</head>
+
+<body>
+    <div id="content">
+        <div class="leftCommand">
+            <h2>CoCaro Test</h2>
+            <form>
+                 Endpoint: <input type="text" id="endpoint" name="endpoint" value="http://localhost:4600/CaroHub" style="width: 200px"><br> 
+            </form>
+
+            <!-- Login -->
+            <fieldset class="divBorder">
+                <form>
+                    <table>
+                        <tr>
+                            <td>UserName:</td>
+                            <td><input type="text" id="txtUserName" name="txtUserName" ><br></td>
+                        </tr>
+                        <tr>
+                            <td>Password:</td>
+                            <td><input type="text" id="txtPassword" name="txtPassword" ><br></td>
+                        </tr>
+                    </table>
+                </form>
+
+                <input type="button" id="btnSend" name="btnSend" onclick="loginHttp()" value="Login" />
+               
+            </fieldset>
+
+            <!-- Common -->
+            <fieldset class="divBorder">
+                <legend>Common</legend>
+                <input type="button" id="btnConnect" onclick="Start()" value="Connect" />
+
+                <input type="button" id="btnLeaveRoom" onclick="leaveRoom()" value="LeaveRoom" />
+                <input type="button" id="btnGetRooms" onclick="getRooms()" value="getRooms" />
+                <input type="button" id="btnGetMyInfo" onclick="getMyInfo()" value="getMyInfo" />
+                <input type="button" id="btnGetInventory" onclick="getInventory()" value="getInventory" />
+                <input type="button" id="btnSurr" onclick="surrender()" value="Surrender" />
+            </fieldset>
+            <!-- create room -->
+            <fieldset class="divBorder">
+                <legend>Create Room</legend>
+                BetValue: <input type="text" id="txtbetValue" name="txtbetValue"><br>
+                NameTable: <input type="text" id="txtnameTable" name="txtnameTable"><br>
+                <input type="button" id="btnCreateRoom" onclick="CreateRoom()" value="CreateRoom" />
+            </fieldset>
+
+            <!-- Vào phòng -->
+            <fieldset class="divBorder">
+                <legend>Vào phòng</legend>
+                <table>
+                    <tr>
+                        <td>RoomSession:</td>
+                        <td><input type="text" id="txtSessionId" name="txtSessionId" ></td>
+                    </tr>
+                    <tr><input type="button" id="btnJoinRoom" onclick="joinRoom()" value="JoinRoom" /></tr>
+                </table>
+            </fieldset>
+            
+
+            
+
+            <fieldset class="divBorder">
+                <legend>Đánh Cờ</legend>
+                <table>
+                    <tr>
+                        <td><input type="button" id="btnReadyStart" onclick="readyStart()" value="ReadyStart" /></td>
+                        <td>
+                            Tọa độ X: <input type="text" id="txtToaDoX" name="txtToaDoX" ><br>
+                            <br />
+                            Tọa độ Y: <input type="text" id="txtToaDoY" name="txtToaDoY" ><br>
+                            <br>
+                            
+                            <input type="button" id="btnDanhCo" onclick="danhCo()" value="DanhCo" />
+                        </td>
+                    </tr>
+                </table>
+            </fieldset>
+
+            
+            
+            
+            <br>
+        </div>
+
+        <div id="rightOutput" class="rightOutput"></div>
+    </div>
+</body>
+
+</html>
