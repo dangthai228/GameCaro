@@ -12,7 +12,9 @@ namespace Caro.Game.Hubs
         {
             if (!_sessions.TryGetValue(sessionId, out var session))
             {
-                throw new Exception($"Game session {sessionId} not found");
+                await Clients.Caller.SendAsync("SessionNotFound");
+                return;
+               // throw new Exception($"Game session {sessionId} not found");
             }
 
             if (!String.IsNullOrEmpty(session.Player2))
@@ -31,6 +33,7 @@ namespace Caro.Game.Hubs
             }
             await Groups.AddToGroupAsync(Context.ConnectionId, sessionId);
             await Clients.Group(session.SessionId).SendAsync("SessionJoined", session.Player1, session.Player2);
+            await Clients.OthersInGroup(session.SessionId).SendAsync("SomeOneJoin");
         }
     }
 }

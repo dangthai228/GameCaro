@@ -3417,11 +3417,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Admin\\source\\repos\\Caro.Game\\Caro.Game\\Caro.Game.csproj",
+      "projectUniqueName": "C:\\Users\\Admin\\Documents\\Github\\GameCaro\\GameCaro\\Caro.Game.csproj",
       "projectName": "Caro.Game",
-      "projectPath": "C:\\Users\\Admin\\source\\repos\\Caro.Game\\Caro.Game\\Caro.Game.csproj",
+      "projectPath": "C:\\Users\\Admin\\Documents\\Github\\GameCaro\\GameCaro\\Caro.Game.csproj",
       "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Admin\\source\\repos\\Caro.Game\\Caro.Game\\obj\\",
+      "outputPath": "C:\\Users\\Admin\\Documents\\Github\\GameCaro\\GameCaro\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Admin\\AppData\\Roaming\\NuGet\\NuGet.Config",

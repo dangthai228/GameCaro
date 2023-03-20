@@ -11,12 +11,14 @@ var txtnameTable;
 var btnGetInventory;
 var btnGetRooms;
 var btnCreateRoom;
+var btnclear;
 var btnJoinRoom;
 var btnLeaveRoom;
 var btnSurrender;
 var btnReady;
 var btnDanhCo;
 var EndPoints;
+var btnKick;
 var output;
 var userInput;
 var pwInput;
@@ -26,22 +28,13 @@ var connection = {};
 async function Start() {
     endpointValue = document.getElementById("endpoint").value;
     btnSend.disabled = true;
+    btnclear.disabled = false;
     if (connection !== undefined) {
     }
     try {
         await connection.start();
         console.assert(connection.state === signalR.HubConnectionState.Connected);
-
-        btnCreateRoom.disabled = false;
-        btnJoinRoom.disabled = false;
-        btnGetInventory.disabled = false;
-        btnGetMyInfo.disabled = false;
-        btnGetRooms.disabled = false;
-
-        btnConnect.disabled = true;
-        endpoint.disabled = true;
-        console.log("SignalR Connected.");
-        writeToScreen("SignalR Connected. ");
+        // writeToScreen("SignalR Connected. ");
     } catch (err) {
         console.log(err);
         writeToScreen('<span style="color: red;">ERROR:</span> ' + err.data);
@@ -49,14 +42,14 @@ async function Start() {
 }
 
 function loginHttp() {
-     self.userInput = document.getElementById('txtUserName').value;
-     self.pwInput = document.getElementById('txtPassword').value;
+    self.userInput = document.getElementById('txtUserName').value;
+    self.pwInput = document.getElementById('txtPassword').value;
     var data = {
         username: userInput,
         password: pwInput
     };
     var xhttp = new XMLHttpRequest();
-    
+
     xhttp.onreadystatechange = function () {
         if (this.readyState == 4 && this.status == 200) {
             self.btnConnect.disabled = false;
@@ -71,23 +64,41 @@ function loginHttp() {
 
             console.log(self.accessToken);
             console.log(self.endpointValue);
-            writeToScreen("Login Sucess !!!");
-            writeToScreen("Token :" + self.accessToken);
-           
 
-             connection = new signalR.HubConnectionBuilder()
+
+            connection = new signalR.HubConnectionBuilder()
                 .withUrl(self.endpointValue, {
                     accessTokenFactory: () => self.accessToken
 
                 })
                 .build();
-            
 
-           
+
+            connection.on('ConnectSucess', () => {
+                writeToScreen("Connect Sucess !!!");
+                writeToScreen("Token :" + self.accessToken);
+                btnCreateRoom.disabled = false;
+                btnJoinRoom.disabled = false;
+                btnGetInventory.disabled = false;
+                btnGetMyInfo.disabled = false;
+                btnGetRooms.disabled = false;
+
+                btnSend.disabled = true;
+
+                btnConnect.disabled = true;
+                endpoint.disabled = true;
+            })
+
+            connection.on('ConnectFailed', () => {
+                writeToScreen("Connect Failed , Try Again !!!");
+                connection.stop();
+                btnConnect.disabled = true;
+                btnSend.disabled = false;
+            })
 
             connection.on('PlayerCaro', (player) => {
                 console.log(player);
-                self.writeToScreen('<span style="color: blue;">RESPONSE:Account_Info: ' + `${JSON.stringify(player) }` + '</span>');
+                self.writeToScreen('<span style="color: blue;">RESPONSE:Account_Info: ' + `${JSON.stringify(player)}` + '</span>');
             });
 
             connection.on('Inventory', (listInventory) => {
@@ -100,9 +111,9 @@ function loginHttp() {
                 self.writeToScreen('<span style="color: blue;">RESPONSE:Rooms: ' + `${listrooms}` + '</span>');
             });
 
-            connection.on('SessionCreated', (sessionId , nameTable) => {    
+            connection.on('SessionCreated', (sessionId, nameTable) => {
                 console.log(sessionId);
-                self.writeToScreen('Create Room sessionID = : ' + `${sessionId}` );
+                self.writeToScreen('Create Room sessionID = : ' + `${sessionId}`);
                 self.writeToScreen('nameTable = :' + `${nameTable}`);
                 btnCreateRoom.disabled = true;
                 btnJoinRoom.disabled = true;
@@ -115,6 +126,16 @@ function loginHttp() {
                 btnCreateRoom.disabled = true;
                 btnJoinRoom.disabled = true;
                 btnReady.disabled = false;
+                btnLeaveRoom.disabled = false;
+            });
+
+            connection.on('SessionNotFound', () => {
+                self.writeToScreen('Room does not exist !!!');
+                btnLeaveRoom.disabled = true;
+            });
+
+            connection.on('SomeOneJoin', () => {
+                btnKick.disabled = false;
             });
 
             connection.on('AllreadyToPlay', () => {
@@ -123,17 +144,19 @@ function loginHttp() {
                 btnLeaveRoom.disabled = true;
                 btnDanhCo.disabled = true;
                 btnSurrender.disabled = false;
+                btnKick.disabled = true;
             });
 
             connection.on('ReadyToPlay', (connectionId) => {
                 self.writeToScreen('Player ' + `${connectionId}` + '  ready !!!');
-                
+
             });
 
             connection.on('PartnerLeaveRoom', (connectionIdleave) => {
                 self.writeToScreen('PlayerConnection  = : ' + `${connectionIdleave}` + '  exit room !!!');
                 btnReady.disabled = true;
                 btnSurrender.disabled = true;
+                btnKick.disabled = true;
             })
 
             connection.on('DisconnectedWhileInRoom', (connectionExit) => {
@@ -142,6 +165,7 @@ function loginHttp() {
                 btnReady.disabled = true;
                 btnLeaveRoom.disabled = false;
                 btnSurrender.disabled = true;
+                btnKick.disabled = true;
             });
 
             connection.on('DisconnectedWhileInGame', (connectionExit) => {
@@ -152,6 +176,7 @@ function loginHttp() {
                 btnLeaveRoom.disabled = false;
                 btnDanhCo.disabled = true;
                 btnSurrender.disabled = true;
+                btnKick.disabled = true;
             });
 
             connection.on('PlayFirst', () => {
@@ -183,10 +208,29 @@ function loginHttp() {
                 btnLeaveRoom.disabled = false;
                 btnDanhCo.disabled = true;
             });
+            connection.on('RoomMaster', () => {
+                btnKick.disabled = false;
+            })
+
+            connection.on('KickPartner', () => {
+                btnKick.disabled = true;
+                btnReady.disabled = true;
+                btnDanhCo.disabled = true;
+                btnLeaveRoom.disabled = false;
+                self.writeToScreen('You kick your opposite!!!');
+            })
+
+            connection.on('Kicked', () => {
+                btnJoinRoom.disabled = false;
+                btnCreateRoom.disabled = false;
+                btnLeaveRoom.disabled = true;
+                btnReady.disabled = true;
+                self.writeToScreen('You has been kicked from room !!!');
+            })
 
             connection.on('YouMove', (row, col, value) => {
                 self.writeToScreen('You check  ' + ` ${value}` + '  row ' + `${row}` + ' col ' + `${col}`);
-               
+
             });
             connection.on('EnemyMove', (row, col, value) => {
                 self.writeToScreen('Opposite check  ' + ` ${value}` + '  row ' + `${row}` + ' col ' + `${col}`);
@@ -196,10 +240,10 @@ function loginHttp() {
 
     };
     xhttp.open("POST", "http://localhost:4600/api/auth/login", true);
-   
+
     xhttp.setRequestHeader("Content-type", "application/json");
     xhttp.setRequestHeader("Access-Control-Allow-Origin", "*");
-    
+
     var requestData = JSON.stringify(data);
     xhttp.send(requestData);
 }
@@ -213,7 +257,7 @@ function clearOutput() {
 
 
 function getMyInfo() {
-    connection.invoke("GetAccountInfo", );
+    connection.invoke("GetAccountInfo",);
     writeToScreen("SENT_GetMyInfo: ");
 }
 
@@ -235,21 +279,34 @@ function writeToScreen(message) {
 }
 function joinRoom() {
     txtSessionId = document.getElementById("txtSessionId").value;
-    connection.invoke("JoinSession", txtSessionId);
-    writeToScreen("Entering Room ... ");
-    btnLeaveRoom.disabled = false;
+    if (txtSessionId !== null && txtSessionId !== '') {
+        connection.invoke("JoinSession", txtSessionId);
+        writeToScreen("Entering Room ... ");
+        
+    }
+    else {
+        writeToScreen("SessionId is null ...");
+    }
+
 }
 
 function CreateRoom() {
     txtbetValue = parseInt(document.getElementById("txtbetValue").value);
     txtnameTable = document.getElementById("txtnameTable").value;
-    connection.invoke('CreateSession', txtbetValue, txtnameTable);
-    btnLeaveRoom.disabled = false;
+
+    if (txtbetValue !== '' && txtnameTable !== '') {
+        connection.invoke('CreateSession', txtbetValue, txtnameTable);
+        btnLeaveRoom.disabled = false;
+    }
+    else {
+        writeToScreen("Lack of information ...");
+    }
 }
 
 function readyStart() {
     connection.invoke('ReadyPlay');
     btnReady.disabled = true;
+    btnKick.disabled = true;
 }
 function leaveRoom() {
     connection.invoke('LeaveRoom');
@@ -272,9 +329,22 @@ function surrender() {
 function danhCo() {
     txtrow = parseInt(document.getElementById('txtToaDoX').value);
     txtcol = parseInt(document.getElementById('txtToaDoY').value);
-    connection.invoke('MakeMove', txtrow, txtcol);
-    btnDanhCo.disabled = true;
+    if (txtrow !== null && txtcol !== null) {
+        connection.invoke('MakeMove', txtrow, txtcol);
+        btnDanhCo.disabled = true;
+    }
+    else {
+        writeToScreen("Lack of information ...");
+    }
+
 }
+
+function Kick() {
+    connection.invoke('KickPlayer');
+    btnKick.disabled = true;
+    btnReady.disabled = true;
+}
+
 document.addEventListener('DOMContentLoaded', function () {
     output = document.getElementById("rightOutput");
     btnSend = document.getElementById("btnSend");
@@ -308,5 +378,10 @@ document.addEventListener('DOMContentLoaded', function () {
 
     btnDanhCo = document.getElementById("btnDanhCo");
     btnDanhCo.disabled = true;
-    
+
+    btnKick = document.getElementById("btnKick");
+    btnKick.disabled = true;
+
+    btnclear = document.getElementById("btnclear");
+    btnclear.disabled = true;
 }, false);
