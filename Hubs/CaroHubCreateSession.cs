@@ -19,6 +19,15 @@ namespace Caro.Game.Hubs
                 betValue = _betValue
             };
 
+            foreach( var room in _sessions.Values)
+            {
+                if(room.NameTable == _name)
+                {
+                    await Clients.Caller.SendAsync("NameInvalid");
+                    return;
+                }
+            }
+
             if (!_sessions.TryAdd(session.SessionId, session))
             {
                 await Clients.Caller.SendAsync("ErrorMessage", "Failed to create game session");

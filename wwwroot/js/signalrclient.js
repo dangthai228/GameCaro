@@ -117,8 +117,13 @@ function loginHttp() {
                 self.writeToScreen('nameTable = :' + `${nameTable}`);
                 btnCreateRoom.disabled = true;
                 btnJoinRoom.disabled = true;
+                btnLeaveRoom.disabled = false;
             });
 
+            connection.on('NameInvalid', () => {
+                self.writeToScreen('NameRoom Exists !!!');
+                btnLeaveRoom.disabled = true;
+            })
 
             connection.on('SessionJoined', (connection1, connection2) => {
                 self.writeToScreen('PlayerConnection 1 = : ' + `${connection1}`);
@@ -131,6 +136,11 @@ function loginHttp() {
 
             connection.on('SessionNotFound', () => {
                 self.writeToScreen('Room does not exist !!!');
+                btnLeaveRoom.disabled = true;
+            });
+
+            connection.on('RoomIsFull', () => {
+                self.writeToScreen('Room is full !!!');
                 btnLeaveRoom.disabled = true;
             });
 
@@ -280,7 +290,7 @@ function writeToScreen(message) {
 function joinRoom() {
     txtSessionId = document.getElementById("txtSessionId").value;
     if (txtSessionId !== null && txtSessionId !== '') {
-        connection.invoke("JoinSession", txtSessionId);
+        connection.invoke("JoinRoomWithName", txtSessionId);
         writeToScreen("Entering Room ... ");
         
     }
@@ -296,7 +306,6 @@ function CreateRoom() {
 
     if (txtbetValue !== '' && txtnameTable !== '') {
         connection.invoke('CreateSession', txtbetValue, txtnameTable);
-        btnLeaveRoom.disabled = false;
     }
     else {
         writeToScreen("Lack of information ...");

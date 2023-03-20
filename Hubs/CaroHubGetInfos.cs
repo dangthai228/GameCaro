@@ -33,7 +33,7 @@ namespace Caro.Game.Hubs
             {
                 if(string.IsNullOrEmpty(session.Player2))
                 {
-                    listsessionId.Add(session.SessionId);
+                    listsessionId.Add(session.NameTable);
                 }
             }
             await Clients.Caller.SendAsync("GetSession", listsessionId);
