@@ -1,4 +1,5 @@
 ﻿using Caro.Game.Enum;
+using Caro.Game.Utilts;
 using Microsoft.AspNetCore.SignalR;
 using System;
 using System.Collections.Generic;
@@ -10,55 +11,67 @@ namespace Caro.Game.Hubs
     { 
         public async Task ReadyPlay()
         {
-            string sessionId = String.Empty;
-            foreach (var session in _sessions.Values)
+            try
             {
-                if(session.Player1 == Context.ConnectionId || session.Player2 == Context.ConnectionId)
+                long accid = AccountClaim.getAccountID(Context);
+                string sessionId = String.Empty;
+                foreach (var session in _sessions.Values)
                 {
-                    sessionId = session.SessionId;
-                    break;
+                    if (session.Player1 == Context.ConnectionId || session.Player2 == Context.ConnectionId)
+                    {
+                        sessionId = session.SessionId;
+                        break;
+                    }
                 }
-            }
-            string oopponent = String.Empty;
-            if (_sessions.ContainsKey(sessionId)) 
-            {
-                if(_sessions.TryGetValue(sessionId, out var session))
+                string oopponent = String.Empty;
+                if (_sessions.ContainsKey(sessionId))
                 {
-                    // Kiem tra xem doi thu ready chua, neu roi thi ca 2 state sng ingame
-                    if (session.Player1 == Context.ConnectionId)
+                    if (_sessions.TryGetValue(sessionId, out var session))
                     {
-                        oopponent = session.Player2;
-                    }
-                    else
-                    {
-                        oopponent = session.Player1;
-                    }
-                    
-                    if(_player.TryGetValue(oopponent, out var otherplayer ))
-                    {
-                        _player.TryGetValue(Context.ConnectionId, out var player);
-                        if (otherplayer.Status == PlayerState.Ready_To_Play)
+                        // Kiem tra xem doi thu ready chua, neu roi thi ca 2 state sng ingame
+                        if (session.Player1 == Context.ConnectionId)
                         {
-                            otherplayer.Status = PlayerState.InGame;
-                            player.Status = PlayerState.InGame;
-
-                            _player.AddOrUpdate(oopponent, otherplayer, (k, v) => v = otherplayer);
-                            _player.AddOrUpdate(Context.ConnectionId, player, (k, v) => v = player);
-
-                            await Clients.Group(sessionId).SendAsync("AllreadyToPlay");
-                            await Clients.Client(session.CurrentPlayer).SendAsync("PlayFirst");
+                            oopponent = session.Player2;
                         }
                         else
                         {
-                            player.Status = PlayerState.Ready_To_Play;
-                            _player.AddOrUpdate(Context.ConnectionId, player, (k, v) => v = player);
-                            await Clients.Group(sessionId).SendAsync("ReadyToPlay",Context.ConnectionId);
+                            oopponent = session.Player1;
                         }
+
+                        if (_player.TryGetValue(oopponent, out var otherplayer))
+                        {
+                            _player.TryGetValue(Context.ConnectionId, out var player);
+                            if (otherplayer.Status == PlayerState.Ready_To_Play)
+                            {
+                                otherplayer.Status = PlayerState.InGame;
+                                player.Status = PlayerState.InGame;
+
+                                _player.AddOrUpdate(oopponent, otherplayer, (k, v) => v = otherplayer);
+                                _player.AddOrUpdate(Context.ConnectionId, player, (k, v) => v = player);
+
+                                await Clients.Group(sessionId).SendAsync("AllreadyToPlay");
+                                await Clients.Client(session.CurrentPlayer).SendAsync("PlayFirst");
+                                LogUtil.LogMessage("AccountId : " + accid + "are ready to play game session : " + sessionId);
+                                LogUtil.LogMessage("All players are in game session : " + sessionId);
+                            }
+                            else
+                            {
+                                player.Status = PlayerState.Ready_To_Play;
+                                _player.AddOrUpdate(Context.ConnectionId, player, (k, v) => v = player);
+                                await Clients.Group(sessionId).SendAsync("ReadyToPlay", Context.ConnectionId);
+                                LogUtil.LogMessage("AccountId : " + accid + "are ready to play game session : "+sessionId);
+                            }
+                        }
+
                     }
 
                 }
-                
             }
+            catch(Exception ex)
+            {
+                LogUtil.LogFailed(ex);
+            }
+            
         }
     }
 }

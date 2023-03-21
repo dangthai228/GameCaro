@@ -1,0 +1,112 @@
+2023-03-21 09:39:57.3649 Info Message Template Auto Format enabled
+2023-03-21 09:39:57.3836 Info Loading assembly: NLog.Web.AspNetCore
+2023-03-21 09:39:58.1061 Info Registered target NLog.Targets.FileTarget(Name=allfile)
+2023-03-21 09:39:58.1061 Info Registered target NLog.Targets.FileTarget(Name=ownFile-web)
+2023-03-21 09:39:58.1061 Info Registered target NLog.Targets.ConsoleTarget(Name=lifetimeConsole)
+2023-03-21 09:39:58.1187 Info Registered target NLog.Targets.Wrappers.AsyncTargetWrapper(Name=infoLog)
+2023-03-21 09:39:58.1187 Info Registered target NLog.Targets.Wrappers.AsyncTargetWrapper(Name=errorLog)
+2023-03-21 09:39:58.1308 Info Registered target NLog.Targets.Wrappers.AsyncTargetWrapper(Name=authenLog)
+2023-03-21 09:39:58.1308 Info Registered target NLog.Targets.Wrappers.AsyncTargetWrapper(Name=Tracking)
+2023-03-21 09:39:58.1308 Info Registered target NLog.Targets.ColoredConsoleTarget(Name=console)
+2023-03-21 09:39:58.1958 Info Validating config: Targets=7, ConfigItems=151, FilePath=C:\Users\Admin\Documents\Github\GameCaro\GameCaro\bin\Debug\net6.0\NLog.config
+2023-03-21 09:39:58.2103 Warn Unused target detected. Add a rule for this target to the configuration. TargetName: Tracking
+2023-03-21 09:39:58.2411 Info Configuration initialized.
+2023-03-21 09:39:58.2856 Info NLog, Version=5.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 5.1.2.1561. Product version: 5.1.2+f57745d9fb1124b8629db879019db120a57698ab. GlobalAssemblyCache: False
+2023-03-21 09:41:12.6795 Info AppDomain Shutting down. LogFactory closing...
+2023-03-21 09:41:12.7418 Info LogFactory has been closed.
+2023-03-21 09:47:47.0603 Info Message Template Auto Format enabled
+2023-03-21 09:47:47.0734 Info Loading assembly: NLog.Web.AspNetCore
+2023-03-21 09:47:47.2109 Info Registered target NLog.Targets.FileTarget(Name=allfile)
+2023-03-21 09:47:47.2109 Info Registered target NLog.Targets.FileTarget(Name=ownFile-web)
+2023-03-21 09:47:47.2109 Info Registered target NLog.Targets.ConsoleTarget(Name=lifetimeConsole)
+2023-03-21 09:47:47.2227 Info Registered target NLog.Targets.Wrappers.AsyncTargetWrapper(Name=infoLog)
+2023-03-21 09:47:47.2227 Info Registered target NLog.Targets.Wrappers.AsyncTargetWrapper(Name=errorLog)
+2023-03-21 09:47:47.2227 Info Registered target NLog.Targets.Wrappers.AsyncTargetWrapper(Name=authenLog)
+2023-03-21 09:47:47.2227 Info Registered target NLog.Targets.Wrappers.AsyncTargetWrapper(Name=Tracking)
+2023-03-21 09:47:47.2436 Info Registered target NLog.Targets.ColoredConsoleTarget(Name=console)
+2023-03-21 09:47:47.2861 Info Validating config: Targets=7, ConfigItems=151, FilePath=C:\Users\Admin\Documents\Github\GameCaro\GameCaro\bin\Debug\net6.0\NLog.config
+2023-03-21 09:47:47.2861 Warn Unused target detected. Add a rule for this target to the configuration. TargetName: Tracking
+2023-03-21 09:47:47.3205 Info Configuration initialized.
+2023-03-21 09:47:47.3205 Info NLog, Version=5.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 5.1.2.1561. Product version: 5.1.2+f57745d9fb1124b8629db879019db120a57698ab. GlobalAssemblyCache: False
+2023-03-21 09:49:04.5812 Info AppDomain Shutting down. LogFactory closing...
+2023-03-21 09:49:04.6125 Info LogFactory has been closed.
+2023-03-21 14:36:28.0779 Info Message Template Auto Format enabled
+2023-03-21 14:36:28.0858 Info Loading assembly: NLog.Web.AspNetCore
+2023-03-21 14:36:28.3569 Info Registered target NLog.Targets.FileTarget(Name=allfile)
+2023-03-21 14:36:28.3569 Info Registered target NLog.Targets.FileTarget(Name=ownFile-web)
+2023-03-21 14:36:28.3569 Info Registered target NLog.Targets.ConsoleTarget(Name=lifetimeConsole)
+2023-03-21 14:36:28.3651 Info Registered target NLog.Targets.Wrappers.AsyncTargetWrapper(Name=infoLog)
+2023-03-21 14:36:28.3651 Info Registered target NLog.Targets.Wrappers.AsyncTargetWrapper(Name=errorLog)
+2023-03-21 14:36:28.3651 Info Registered target NLog.Targets.Wrappers.AsyncTargetWrapper(Name=authenLog)
+2023-03-21 14:36:28.3651 Info Registered target NLog.Targets.Wrappers.AsyncTargetWrapper(Name=Tracking)
+2023-03-21 14:36:28.3651 Info Registered target NLog.Targets.ColoredConsoleTarget(Name=console)
+2023-03-21 14:36:28.3923 Info Validating config: Targets=7, ConfigItems=151, FilePath=C:\Users\Admin\Documents\Github\GameCaro\GameCaro\bin\Debug\net6.0\NLog.config
+2023-03-21 14:36:28.3976 Warn Unused target detected. Add a rule for this target to the configuration. TargetName: Tracking
+2023-03-21 14:36:28.3976 Info Configuration initialized.
+2023-03-21 14:36:28.4139 Info NLog, Version=5.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 5.1.2.1561. Product version: 5.1.2+f57745d9fb1124b8629db879019db120a57698ab. GlobalAssemblyCache: False
+2023-03-21 14:41:39.5006 Info AppDomain Shutting down. LogFactory closing...
+2023-03-21 14:41:39.5226 Info LogFactory has been closed.
+2023-03-21 14:42:37.9957 Info Message Template Auto Format enabled
+2023-03-21 14:42:37.9957 Info Loading assembly: NLog.Web.AspNetCore
+2023-03-21 14:42:38.0569 Info Registered target NLog.Targets.FileTarget(Name=allfile)
+2023-03-21 14:42:38.0569 Info Registered target NLog.Targets.FileTarget(Name=ownFile-web)
+2023-03-21 14:42:38.0569 Info Registered target NLog.Targets.ConsoleTarget(Name=lifetimeConsole)
+2023-03-21 14:42:38.0569 Info Registered target NLog.Targets.Wrappers.AsyncTargetWrapper(Name=infoLog)
+2023-03-21 14:42:38.0569 Info Registered target NLog.Targets.Wrappers.AsyncTargetWrapper(Name=errorLog)
+2023-03-21 14:42:38.0665 Info Registered target NLog.Targets.Wrappers.AsyncTargetWrapper(Name=authenLog)
+2023-03-21 14:42:38.0665 Info Registered target NLog.Targets.Wrappers.AsyncTargetWrapper(Name=Tracking)
+2023-03-21 14:42:38.0665 Info Registered target NLog.Targets.ColoredConsoleTarget(Name=console)
+2023-03-21 14:42:38.0873 Info Validating config: Targets=7, ConfigItems=151, FilePath=C:\Users\Admin\Documents\Github\GameCaro\GameCaro\bin\Debug\net6.0\NLog.config
+2023-03-21 14:42:38.0873 Warn Unused target detected. Add a rule for this target to the configuration. TargetName: Tracking
+2023-03-21 14:42:38.1011 Info Configuration initialized.
+2023-03-21 14:42:38.1011 Info NLog, Version=5.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 5.1.2.1561. Product version: 5.1.2+f57745d9fb1124b8629db879019db120a57698ab. GlobalAssemblyCache: False
+2023-03-21 14:47:14.9107 Info AppDomain Shutting down. LogFactory closing...
+2023-03-21 14:47:14.9269 Info LogFactory has been closed.
+2023-03-21 14:54:37.7806 Info Message Template Auto Format enabled
+2023-03-21 14:54:37.7863 Info Loading assembly: NLog.Web.AspNetCore
+2023-03-21 14:54:37.8471 Info Registered target NLog.Targets.FileTarget(Name=allfile)
+2023-03-21 14:54:37.8471 Info Registered target NLog.Targets.FileTarget(Name=ownFile-web)
+2023-03-21 14:54:37.8501 Info Registered target NLog.Targets.ConsoleTarget(Name=lifetimeConsole)
+2023-03-21 14:54:37.8501 Info Registered target NLog.Targets.Wrappers.AsyncTargetWrapper(Name=infoLog)
+2023-03-21 14:54:37.8501 Info Registered target NLog.Targets.Wrappers.AsyncTargetWrapper(Name=errorLog)
+2023-03-21 14:54:37.8501 Info Registered target NLog.Targets.Wrappers.AsyncTargetWrapper(Name=authenLog)
+2023-03-21 14:54:37.8501 Info Registered target NLog.Targets.Wrappers.AsyncTargetWrapper(Name=Tracking)
+2023-03-21 14:54:37.8501 Info Registered target NLog.Targets.ColoredConsoleTarget(Name=console)
+2023-03-21 14:54:37.8789 Info Validating config: Targets=7, ConfigItems=151, FilePath=C:\Users\Admin\Documents\Github\GameCaro\GameCaro\bin\Debug\net6.0\NLog.config
+2023-03-21 14:54:37.8831 Warn Unused target detected. Add a rule for this target to the configuration. TargetName: Tracking
+2023-03-21 14:54:37.8831 Info Configuration initialized.
+2023-03-21 14:54:37.8831 Info NLog, Version=5.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 5.1.2.1561. Product version: 5.1.2+f57745d9fb1124b8629db879019db120a57698ab. GlobalAssemblyCache: False
+2023-03-21 14:58:49.2002 Info AppDomain Shutting down. LogFactory closing...
+2023-03-21 14:58:49.2184 Info LogFactory has been closed.
+2023-03-21 14:59:09.4015 Info Message Template Auto Format enabled
+2023-03-21 14:59:09.4015 Info Loading assembly: NLog.Web.AspNetCore
+2023-03-21 14:59:09.4653 Info Registered target NLog.Targets.FileTarget(Name=allfile)
+2023-03-21 14:59:09.4653 Info Registered target NLog.Targets.FileTarget(Name=ownFile-web)
+2023-03-21 14:59:09.4653 Info Registered target NLog.Targets.ConsoleTarget(Name=lifetimeConsole)
+2023-03-21 14:59:09.4653 Info Registered target NLog.Targets.Wrappers.AsyncTargetWrapper(Name=infoLog)
+2023-03-21 14:59:09.4653 Info Registered target NLog.Targets.Wrappers.AsyncTargetWrapper(Name=errorLog)
+2023-03-21 14:59:09.4735 Info Registered target NLog.Targets.Wrappers.AsyncTargetWrapper(Name=authenLog)
+2023-03-21 14:59:09.4735 Info Registered target NLog.Targets.Wrappers.AsyncTargetWrapper(Name=Tracking)
+2023-03-21 14:59:09.4735 Info Registered target NLog.Targets.ColoredConsoleTarget(Name=console)
+2023-03-21 14:59:09.4961 Info Validating config: Targets=7, ConfigItems=151, FilePath=C:\Users\Admin\Documents\Github\GameCaro\GameCaro\bin\Debug\net6.0\NLog.config
+2023-03-21 14:59:09.4961 Warn Unused target detected. Add a rule for this target to the configuration. TargetName: Tracking
+2023-03-21 14:59:09.5116 Info Configuration initialized.
+2023-03-21 14:59:09.5116 Info NLog, Version=5.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 5.1.2.1561. Product version: 5.1.2+f57745d9fb1124b8629db879019db120a57698ab. GlobalAssemblyCache: False
+2023-03-21 15:00:46.6355 Info AppDomain Shutting down. LogFactory closing...
+2023-03-21 15:00:46.6591 Info LogFactory has been closed.
+2023-03-21 15:03:49.8637 Info Message Template Auto Format enabled
+2023-03-21 15:03:49.8637 Info Loading assembly: NLog.Web.AspNetCore
+2023-03-21 15:03:49.9559 Info Registered target NLog.Targets.FileTarget(Name=allfile)
+2023-03-21 15:03:49.9559 Info Registered target NLog.Targets.FileTarget(Name=ownFile-web)
+2023-03-21 15:03:49.9604 Info Registered target NLog.Targets.ConsoleTarget(Name=lifetimeConsole)
+2023-03-21 15:03:49.9604 Info Registered target NLog.Targets.Wrappers.AsyncTargetWrapper(Name=infoLog)
+2023-03-21 15:03:49.9604 Info Registered target NLog.Targets.Wrappers.AsyncTargetWrapper(Name=errorLog)
+2023-03-21 15:03:49.9604 Info Registered target NLog.Targets.Wrappers.AsyncTargetWrapper(Name=authenLog)
+2023-03-21 15:03:49.9604 Info Registered target NLog.Targets.Wrappers.AsyncTargetWrapper(Name=Tracking)
+2023-03-21 15:03:49.9769 Info Registered target NLog.Targets.ColoredConsoleTarget(Name=console)
+2023-03-21 15:03:50.0030 Info Validating config: Targets=7, ConfigItems=151, FilePath=C:\Users\Admin\Documents\Github\GameCaro\GameCaro\bin\Debug\net6.0\NLog.config
+2023-03-21 15:03:50.0106 Warn Unused target detected. Add a rule for this target to the configuration. TargetName: Tracking
+2023-03-21 15:03:50.0263 Info Configuration initialized.
+2023-03-21 15:03:50.0263 Info NLog, Version=5.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c. File version: 5.1.2.1561. Product version: 5.1.2+f57745d9fb1124b8629db879019db120a57698ab. GlobalAssemblyCache: False
+2023-03-21 15:05:12.8514 Info AppDomain Shutting down. LogFactory closing...
+2023-03-21 15:05:12.8802 Info LogFactory has been closed.

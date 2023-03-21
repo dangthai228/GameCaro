@@ -188,3 +188,7 @@ C:\Users\Admin\Documents\Github\GameCaro\GameCaro\obj\Debug\net6.0\refint\Caro.G
 C:\Users\Admin\Documents\Github\GameCaro\GameCaro\obj\Debug\net6.0\Caro.Game.pdb
 C:\Users\Admin\Documents\Github\GameCaro\GameCaro\obj\Debug\net6.0\Caro.Game.genruntimeconfig.cache
 C:\Users\Admin\Documents\Github\GameCaro\GameCaro\obj\Debug\net6.0\ref\Caro.Game.dll
+C:\Users\Admin\Documents\Github\GameCaro\GameCaro\bin\Debug\net6.0\nlog.config
+C:\Users\Admin\Documents\Github\GameCaro\GameCaro\bin\Debug\net6.0\NLog.dll
+C:\Users\Admin\Documents\Github\GameCaro\GameCaro\bin\Debug\net6.0\NLog.Extensions.Logging.dll
+C:\Users\Admin\Documents\Github\GameCaro\GameCaro\bin\Debug\net6.0\NLog.Web.AspNetCore.dll

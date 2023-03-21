@@ -193,6 +193,10 @@ function loginHttp() {
                 self.writeToScreen('You go first');
                 btnDanhCo.disabled = false;
             })
+            connection.on('msgingame', (msg) => {
+                self.writeToScreen('Message' + `${msg}`);
+                btnDanhCo.disable = false;
+            })
 
             connection.on('Winner', () => {
                 self.writeToScreen('You are winner !!!');

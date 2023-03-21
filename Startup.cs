@@ -1,4 +1,5 @@
 ﻿using Caro.Game.Hubs;
+using Caro.Game.Utilts;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -6,6 +7,7 @@ using Microsoft.AspNetCore.Http.Connections;
 using Microsoft.AspNetCore.HttpOverrides;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Logging;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
 using System;
@@ -99,10 +101,11 @@ namespace Caro.Game
              });
         }
 
-        public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
+        public void Configure(IApplicationBuilder app, IWebHostEnvironment env , ILoggerFactory logger)
         {
             app.UseStaticFiles();
             app.UseRouting();
+            LoggerCreator.Instance = logger;    
             app.UseCors("Origins");
             app.UseSwagger();
             /*Enabling Swagger ui, consider doing it on Development env only*/

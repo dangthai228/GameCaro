@@ -1,6 +1,7 @@
 ﻿using Caro.Game.Session;
 using Caro.Game.Utilts;
 using Microsoft.AspNetCore.SignalR;
+using System;
 using System.Collections.Generic;
 using System.Numerics;
 using System.Threading.Tasks;
@@ -11,10 +12,18 @@ namespace Caro.Game.Hubs
     {
         public async Task GetAccountInfo()
         {
-            if (_player.TryGetValue(Context.ConnectionId,out var player))
+            try
             {
-                await Clients.Caller.SendAsync("PlayerCaro", player);
+                if (_player.TryGetValue(Context.ConnectionId, out var player))
+                {
+                    await Clients.Caller.SendAsync("PlayerCaro", player);
+                }
             }
+            catch(Exception ex)
+            {
+                LogUtil.LogFailed(ex);
+            }
+            
         }
 
         public async Task GetInventory()

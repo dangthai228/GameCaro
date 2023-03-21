@@ -60,6 +60,14 @@
               "target": "Package",
               "version": "[8.0.32.1, )"
             },
+            "NLog": {
+              "target": "Package",
+              "version": "[5.*, )"
+            },
+            "NLog.Web.AspNetCore": {
+              "target": "Package",
+              "version": "[5.*, )"
+            },
             "Swashbuckle.AspNetCore": {
               "target": "Package",
               "version": "[6.1.5, )"

@@ -1,4 +1,4 @@
-﻿namespace Caro.Game
+﻿namespace Caro.Game.Utilts
 {
     public class AppSettings
     {

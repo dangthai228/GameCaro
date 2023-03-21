@@ -1,0 +1,83 @@
+2023-03-21 14:36:30.7036 INFO :	<OnConnectedAsync>d__18.MoveNext 	AccountId : 2 connect to SignalR success !!!
+2023-03-21 14:36:36.8526 INFO :	<OnConnectedAsync>d__18.MoveNext 	AccountId : 4 connect to SignalR success !!!
+2023-03-21 14:36:44.4699 INFO :	<CreateSession>d__9.MoveNext 	Create Sesssion :{"NameTable":"thaind","SessionId":"c73aca4a-c9f3-49dd-9d0d-36c4e8e4e7ca","Player1":"kz_-04O-wmYEVtVwM6-01w","Player2":"","Board":[[null,null,null,null,null,null,null,null,null,null,null,null,null,null,null],[null,null,null,null,null,null,null,null,null,null,null,null,null,null,null],[null,null,null,null,null,null,null,null,null,null,null,null,null,null,null],[null,null,null,null,null,null,null,null,null,null,null,null,null,null,null],[null,null,null,null,null,null,null,null,null,null,null,null,null,null,null],[null,null,null,null,null,null,null,null,null,null,null,null,null,null,null],[null,null,null,null,null,null,null,null,null,null,null,null,null,null,null],[null,null,null,null,null,null,null,null,null,null,null,null,null,null,null],[null,null,null,null,null,null,null,null,null,null,null,null,null,null,null],[null,null,null,null,null,null,null,null,null,null,null,null,null,null,null],[null,null,null,null,null,null,null,null,null,null,null,null,null,null,null],[null,null,null,null,null,null,null,null,null,null,null,null,null,null,null],[null,null,null,null,null,null,null,null,null,null,null,null,null,null,null],[null,null,null,null,null,null,null,null,null,null,null,null,null,null,null],[null,null,null,null,null,null,null,null,null,null,null,null,null,null,null]],"CurrentPlayer":"kz_-04O-wmYEVtVwM6-01w","betValue":5000}
+2023-03-21 14:36:49.4533 INFO :	<JoinRoomWithName>d__13.MoveNext 	AcountId : 2 has join the room  sessionnamethaind
+2023-03-21 14:36:54.8840 INFO :	<ReadyPlay>d__19.MoveNext 	AccountId : 2are ready to play game session : c73aca4a-c9f3-49dd-9d0d-36c4e8e4e7ca
+2023-03-21 14:38:08.9397 INFO :	<ReadyPlay>d__19.MoveNext 	AccountId : 4are ready to play game session : c73aca4a-c9f3-49dd-9d0d-36c4e8e4e7ca
+2023-03-21 14:38:08.9397 INFO :	<ReadyPlay>d__19.MoveNext 	All players are in game session : c73aca4a-c9f3-49dd-9d0d-36c4e8e4e7ca
+2023-03-21 14:38:39.1690 INFO :	<MakeMove>d__16.MoveNext 	Player AccountId :4 cell row : 1 col : 1value : X
+2023-03-21 14:39:10.5490 INFO :	<MakeMove>d__16.MoveNext 	Player AccountId :2 cell row : 0 col : 1value : O
+2023-03-21 14:39:14.6190 INFO :	<MakeMove>d__16.MoveNext 	Player AccountId :4 cell row : 2 col : 2value : X
+2023-03-21 14:39:17.1161 INFO :	<MakeMove>d__16.MoveNext 	Player AccountId :2 cell row : 0 col : 2value : O
+2023-03-21 14:39:20.2445 INFO :	<MakeMove>d__16.MoveNext 	Player AccountId :4 cell row : 3 col : 3value : X
+2023-03-21 14:39:22.7998 INFO :	<MakeMove>d__16.MoveNext 	Player AccountId :2 cell row : 0 col : 3value : O
+2023-03-21 14:39:26.1521 INFO :	<MakeMove>d__16.MoveNext 	Player AccountId :4 cell row : 4 col : 4value : X
+2023-03-21 14:39:32.9484 INFO :	<MakeMove>d__16.MoveNext 	Player AccountId :2 cell row : 0 col : 4value : O
+2023-03-21 14:39:36.4083 INFO :	<MakeMove>d__16.MoveNext 	Player AccountId :4 cell row : 5 col : 5value : X
+2023-03-21 14:41:04.6868 INFO :	<OnDisconnectedAsync>d__17.MoveNext 	Player AccountId : 2  has disconnected
+2023-03-21 14:41:39.4733 INFO :	<OnDisconnectedAsync>d__17.MoveNext 	Player AccountId : 4  has disconnected
+2023-03-21 14:42:39.5801 INFO :	<OnConnectedAsync>d__18.MoveNext 	AccountId : 2 connect to SignalR success !!!
+2023-03-21 14:42:48.9275 INFO :	<OnConnectedAsync>d__18.MoveNext 	AccountId : 4 connect to SignalR success !!!
+2023-03-21 14:42:55.5969 INFO :	<CreateSession>d__9.MoveNext 	Create Sesssion :{"NameTable":"thaoxd","SessionId":"29288bab-18a3-4733-93e3-ea48986c1226","Player1":"bMvZ-je_puTq3MHHBystcw","Player2":"","Board":[[null,null,null,null,null,null,null,null,null,null,null,null,null,null,null],[null,null,null,null,null,null,null,null,null,null,null,null,null,null,null],[null,null,null,null,null,null,null,null,null,null,null,null,null,null,null],[null,null,null,null,null,null,null,null,null,null,null,null,null,null,null],[null,null,null,null,null,null,null,null,null,null,null,null,null,null,null],[null,null,null,null,null,null,null,null,null,null,null,null,null,null,null],[null,null,null,null,null,null,null,null,null,null,null,null,null,null,null],[null,null,null,null,null,null,null,null,null,null,null,null,null,null,null],[null,null,null,null,null,null,null,null,null,null,null,null,null,null,null],[null,null,null,null,null,null,null,null,null,null,null,null,null,null,null],[null,null,null,null,null,null,null,null,null,null,null,null,null,null,null],[null,null,null,null,null,null,null,null,null,null,null,null,null,null,null],[null,null,null,null,null,null,null,null,null,null,null,null,null,null,null],[null,null,null,null,null,null,null,null,null,null,null,null,null,null,null],[null,null,null,null,null,null,null,null,null,null,null,null,null,null,null]],"CurrentPlayer":"bMvZ-je_puTq3MHHBystcw","betValue":5000}
+2023-03-21 14:42:59.8738 INFO :	<JoinRoomWithName>d__13.MoveNext 	AcountId : 2 has join the room  sessionnamethaoxd
+2023-03-21 14:43:09.1847 INFO :	<ReadyPlay>d__19.MoveNext 	AccountId : 4are ready to play game session : 29288bab-18a3-4733-93e3-ea48986c1226
+2023-03-21 14:43:11.0250 INFO :	<ReadyPlay>d__19.MoveNext 	AccountId : 2are ready to play game session : 29288bab-18a3-4733-93e3-ea48986c1226
+2023-03-21 14:43:11.0250 INFO :	<ReadyPlay>d__19.MoveNext 	All players are in game session : 29288bab-18a3-4733-93e3-ea48986c1226
+2023-03-21 14:43:23.3332 INFO :	<MakeMove>d__16.MoveNext 	Player AccountId :4 cell row : 0 col : 0value : X
+2023-03-21 14:43:27.4845 INFO :	<MakeMove>d__16.MoveNext 	Player AccountId :2 cell row : 0 col : 1value : O
+2023-03-21 14:43:30.9084 INFO :	<MakeMove>d__16.MoveNext 	Player AccountId :4 cell row : 1 col : 1value : X
+2023-03-21 14:43:36.1644 INFO :	<MakeMove>d__16.MoveNext 	Player AccountId :2 cell row : 0 col : 2value : O
+2023-03-21 14:43:47.3247 INFO :	<MakeMove>d__16.MoveNext 	Player AccountId :4 cell row : 2 col : 2value : X
+2023-03-21 14:43:50.5884 INFO :	<MakeMove>d__16.MoveNext 	Player AccountId :2 cell row : 0 col : 3value : O
+2023-03-21 14:43:53.7735 INFO :	<MakeMove>d__16.MoveNext 	Player AccountId :4 cell row : 3 col : 3value : X
+2023-03-21 14:43:56.1812 INFO :	<MakeMove>d__16.MoveNext 	Player AccountId :2 cell row : 0 col : 4value : O
+2023-03-21 14:43:59.5564 INFO :	<MakeMove>d__16.MoveNext 	Player AccountId :4 cell row : 4 col : 4value : X
+2023-03-21 14:44:12.8684 INFO :	<MakeMove>d__16.MoveNext 	Player AccountId :2 cell row : 0 col : 5value : O
+2023-03-21 14:47:14.8934 INFO :	<OnDisconnectedAsync>d__17.MoveNext 	Player AccountId : 2  has disconnected
+2023-03-21 14:47:14.8965 INFO :	<OnDisconnectedAsync>d__17.MoveNext 	Player AccountId : 4  has disconnected
+2023-03-21 14:54:38.4962 INFO :	<OnConnectedAsync>d__18.MoveNext 	AccountId : 2 connect to SignalR success !!!
+2023-03-21 14:54:43.5894 INFO :	<OnConnectedAsync>d__18.MoveNext 	AccountId : 4 connect to SignalR success !!!
+2023-03-21 14:54:48.5299 INFO :	<CreateSession>d__9.MoveNext 	Create Sesssion :{"NameTable":"hung","SessionId":"6a7f5cea-6239-4f64-bc4a-0f32212eb120","Player1":"bpNqXmGVSlbQg71Z4ugqXQ","Player2":"","Board":[[null,null,null,null,null,null,null,null,null,null,null,null,null,null,null],[null,null,null,null,null,null,null,null,null,null,null,null,null,null,null],[null,null,null,null,null,null,null,null,null,null,null,null,null,null,null],[null,null,null,null,null,null,null,null,null,null,null,null,null,null,null],[null,null,null,null,null,null,null,null,null,null,null,null,null,null,null],[null,null,null,null,null,null,null,null,null,null,null,null,null,null,null],[null,null,null,null,null,null,null,null,null,null,null,null,null,null,null],[null,null,null,null,null,null,null,null,null,null,null,null,null,null,null],[null,null,null,null,null,null,null,null,null,null,null,null,null,null,null],[null,null,null,null,null,null,null,null,null,null,null,null,null,null,null],[null,null,null,null,null,null,null,null,null,null,null,null,null,null,null],[null,null,null,null,null,null,null,null,null,null,null,null,null,null,null],[null,null,null,null,null,null,null,null,null,null,null,null,null,null,null],[null,null,null,null,null,null,null,null,null,null,null,null,null,null,null],[null,null,null,null,null,null,null,null,null,null,null,null,null,null,null]],"CurrentPlayer":"bpNqXmGVSlbQg71Z4ugqXQ","betValue":5000}
+2023-03-21 14:54:53.1355 INFO :	<JoinRoomWithName>d__13.MoveNext 	AcountId : 2 has join the room  sessionnamehung
+2023-03-21 14:54:56.1248 INFO :	<ReadyPlay>d__19.MoveNext 	AccountId : 2are ready to play game session : 6a7f5cea-6239-4f64-bc4a-0f32212eb120
+2023-03-21 14:54:57.6981 INFO :	<ReadyPlay>d__19.MoveNext 	AccountId : 4are ready to play game session : 6a7f5cea-6239-4f64-bc4a-0f32212eb120
+2023-03-21 14:54:57.6981 INFO :	<ReadyPlay>d__19.MoveNext 	All players are in game session : 6a7f5cea-6239-4f64-bc4a-0f32212eb120
+2023-03-21 14:58:49.1815 INFO :	<OnDisconnectedAsync>d__17.MoveNext 	Player AccountId : 4  has disconnected
+2023-03-21 14:58:49.1815 INFO :	<OnDisconnectedAsync>d__17.MoveNext 	Player AccountId : 2  has disconnected
+2023-03-21 14:59:11.4155 INFO :	<OnConnectedAsync>d__18.MoveNext 	AccountId : 2 connect to SignalR success !!!
+2023-03-21 14:59:15.7456 INFO :	<OnConnectedAsync>d__18.MoveNext 	AccountId : 4 connect to SignalR success !!!
+2023-03-21 14:59:19.9939 INFO :	<CreateSession>d__9.MoveNext 	Create Sesssion :{"NameTable":"thaoxd","SessionId":"715a3717-8cd6-46d5-a7af-a54433c33a9b","Player1":"EUpgiE_VRH4rxQfbx8eA_w","Player2":"","Board":[[null,null,null,null,null,null,null,null,null,null,null,null,null,null,null],[null,null,null,null,null,null,null,null,null,null,null,null,null,null,null],[null,null,null,null,null,null,null,null,null,null,null,null,null,null,null],[null,null,null,null,null,null,null,null,null,null,null,null,null,null,null],[null,null,null,null,null,null,null,null,null,null,null,null,null,null,null],[null,null,null,null,null,null,null,null,null,null,null,null,null,null,null],[null,null,null,null,null,null,null,null,null,null,null,null,null,null,null],[null,null,null,null,null,null,null,null,null,null,null,null,null,null,null],[null,null,null,null,null,null,null,null,null,null,null,null,null,null,null],[null,null,null,null,null,null,null,null,null,null,null,null,null,null,null],[null,null,null,null,null,null,null,null,null,null,null,null,null,null,null],[null,null,null,null,null,null,null,null,null,null,null,null,null,null,null],[null,null,null,null,null,null,null,null,null,null,null,null,null,null,null],[null,null,null,null,null,null,null,null,null,null,null,null,null,null,null],[null,null,null,null,null,null,null,null,null,null,null,null,null,null,null]],"CurrentPlayer":"EUpgiE_VRH4rxQfbx8eA_w","betValue":5000}
+2023-03-21 14:59:25.0476 INFO :	<JoinRoomWithName>d__13.MoveNext 	AcountId : 2 has join the room  sessionnamethaoxd
+2023-03-21 14:59:26.8095 INFO :	<ReadyPlay>d__19.MoveNext 	AccountId : 2are ready to play game session : 715a3717-8cd6-46d5-a7af-a54433c33a9b
+2023-03-21 14:59:28.1165 INFO :	<ReadyPlay>d__19.MoveNext 	AccountId : 4are ready to play game session : 715a3717-8cd6-46d5-a7af-a54433c33a9b
+2023-03-21 14:59:28.1165 INFO :	<ReadyPlay>d__19.MoveNext 	All players are in game session : 715a3717-8cd6-46d5-a7af-a54433c33a9b
+2023-03-21 14:59:36.4147 INFO :	<MakeMove>d__16.MoveNext 	Player AccountId :4 cell row : 0 col : 0value : X
+2023-03-21 14:59:38.9340 INFO :	<MakeMove>d__16.MoveNext 	Player AccountId :2 cell row : 0 col : 1value : O
+2023-03-21 14:59:44.8256 INFO :	<MakeMove>d__16.MoveNext 	Player AccountId :4 cell row : 1 col : 1value : X
+2023-03-21 14:59:49.5303 INFO :	<MakeMove>d__16.MoveNext 	Player AccountId :2 cell row : 0 col : 2value : O
+2023-03-21 14:59:52.4662 INFO :	<MakeMove>d__16.MoveNext 	Player AccountId :4 cell row : 2 col : 2value : X
+2023-03-21 14:59:55.2732 INFO :	<MakeMove>d__16.MoveNext 	Player AccountId :2 cell row : 0 col : 3value : O
+2023-03-21 14:59:58.1134 INFO :	<MakeMove>d__16.MoveNext 	Player AccountId :4 cell row : 3 col : 3value : X
+2023-03-21 15:00:01.7773 INFO :	<MakeMove>d__16.MoveNext 	Player AccountId :2 cell row : 0 col : 4value : O
+2023-03-21 15:00:04.7659 INFO :	<MakeMove>d__16.MoveNext 	Player AccountId :4 cell row : 4 col : 4value : X
+2023-03-21 15:00:38.7575 INFO :	<MakeMove>d__16.MoveNext 	Player AccountId :2 cell row : 0 col : 5value : O
+2023-03-21 15:00:46.6003 INFO :	<OnDisconnectedAsync>d__17.MoveNext 	Player AccountId : 4  has disconnected
+2023-03-21 15:00:46.6003 INFO :	<OnDisconnectedAsync>d__17.MoveNext 	Player AccountId : 2  has disconnected
+2023-03-21 15:03:51.0924 INFO :	<OnConnectedAsync>d__18.MoveNext 	AccountId : 2 connect to SignalR success !!!
+2023-03-21 15:03:54.7267 INFO :	<CreateSession>d__9.MoveNext 	Create Sesssion :{"NameTable":"thaind","SessionId":"60798eed-f6d7-4bb9-9b51-a75ed4837e23","Player1":"c49oBtp0dhNv4BS1LO489Q","Player2":"","Board":[[null,null,null,null,null,null,null,null,null,null,null,null,null,null,null],[null,null,null,null,null,null,null,null,null,null,null,null,null,null,null],[null,null,null,null,null,null,null,null,null,null,null,null,null,null,null],[null,null,null,null,null,null,null,null,null,null,null,null,null,null,null],[null,null,null,null,null,null,null,null,null,null,null,null,null,null,null],[null,null,null,null,null,null,null,null,null,null,null,null,null,null,null],[null,null,null,null,null,null,null,null,null,null,null,null,null,null,null],[null,null,null,null,null,null,null,null,null,null,null,null,null,null,null],[null,null,null,null,null,null,null,null,null,null,null,null,null,null,null],[null,null,null,null,null,null,null,null,null,null,null,null,null,null,null],[null,null,null,null,null,null,null,null,null,null,null,null,null,null,null],[null,null,null,null,null,null,null,null,null,null,null,null,null,null,null],[null,null,null,null,null,null,null,null,null,null,null,null,null,null,null],[null,null,null,null,null,null,null,null,null,null,null,null,null,null,null],[null,null,null,null,null,null,null,null,null,null,null,null,null,null,null]],"CurrentPlayer":"c49oBtp0dhNv4BS1LO489Q","betValue":5000}
+2023-03-21 15:04:02.0802 INFO :	<OnConnectedAsync>d__18.MoveNext 	AccountId : 4 connect to SignalR success !!!
+2023-03-21 15:04:05.6289 INFO :	<JoinRoomWithName>d__13.MoveNext 	AcountId : 4 has join the room  sessionnamethaind
+2023-03-21 15:04:07.3358 INFO :	<ReadyPlay>d__19.MoveNext 	AccountId : 4are ready to play game session : 60798eed-f6d7-4bb9-9b51-a75ed4837e23
+2023-03-21 15:04:08.7263 INFO :	<ReadyPlay>d__19.MoveNext 	AccountId : 2are ready to play game session : 60798eed-f6d7-4bb9-9b51-a75ed4837e23
+2023-03-21 15:04:08.7263 INFO :	<ReadyPlay>d__19.MoveNext 	All players are in game session : 60798eed-f6d7-4bb9-9b51-a75ed4837e23
+2023-03-21 15:04:14.7185 INFO :	<MakeMove>d__16.MoveNext 	Player AccountId :2 cell row : 0 col : 0value : X
+2023-03-21 15:04:18.1420 INFO :	<MakeMove>d__16.MoveNext 	Player AccountId :4 cell row : 0 col : 1value : O
+2023-03-21 15:04:20.8231 INFO :	<MakeMove>d__16.MoveNext 	Player AccountId :2 cell row : 1 col : 1value : X
+2023-03-21 15:04:23.0562 INFO :	<MakeMove>d__16.MoveNext 	Player AccountId :4 cell row : 0 col : 2value : O
+2023-03-21 15:04:26.2787 INFO :	<MakeMove>d__16.MoveNext 	Player AccountId :2 cell row : 2 col : 2value : X
+2023-03-21 15:04:29.7740 INFO :	<MakeMove>d__16.MoveNext 	Player AccountId :4 cell row : 0 col : 3value : O
+2023-03-21 15:04:33.0859 INFO :	<MakeMove>d__16.MoveNext 	Player AccountId :2 cell row : 3 col : 3value : X
+2023-03-21 15:04:35.8626 INFO :	<MakeMove>d__16.MoveNext 	Player AccountId :4 cell row : 0 col : 4value : O
+2023-03-21 15:04:38.5568 INFO :	<MakeMove>d__16.MoveNext 	Game session : 60798eed-f6d7-4bb9-9b51-a75ed4837e23Is End , Winner is 2
+2023-03-21 15:05:06.1706 INFO :	<OnDisconnectedAsync>d__17.MoveNext 	Player AccountId : 4  has disconnected
+2023-03-21 15:05:09.8842 INFO :	<OnDisconnectedAsync>d__17.MoveNext 	Player AccountId : 2  has disconnected

@@ -1,4 +1,5 @@
 ﻿using Caro.Game.Enum;
+using Caro.Game.Utilts;
 using Microsoft.AspNetCore.SignalR;
 using MySqlX.XDevAPI;
 using System;
@@ -11,49 +12,63 @@ namespace Caro.Game.Hubs
     {
         public async Task Surrender()
         {
-            string sessionID = String.Empty;
-            foreach (var session in _sessions.Values)
+            try
             {
-                if (session.Player1 == Context.ConnectionId || session.Player2 == Context.ConnectionId)
+                long accid = AccountClaim.getAccountID(Context);
+                string sessionID = String.Empty;
+                foreach (var session in _sessions.Values)
                 {
-                    sessionID = session.SessionId;
-                    break;
+                    if (session.Player1 == Context.ConnectionId || session.Player2 == Context.ConnectionId)
+                    {
+                        sessionID = session.SessionId;
+                        break;
+                    }
+                }
+                if (_player.ContainsKey(Context.ConnectionId))
+                {
+                    _player.TryGetValue(Context.ConnectionId, out var playersur);
+                    if (_sessions.TryGetValue(sessionID, out var session))
+                    {
+                        string connectionOpposite = String.Empty;
+                        if (Context.ConnectionId.Equals(session.Player1))
+                        {
+                            bool IsUpdate = updateAfterEndGame(session, false);
+                            connectionOpposite = session.Player2;
+                        }
+                        else
+                        {
+                            bool IsUpdate = updateAfterEndGame(session, true);
+                            connectionOpposite = session.Player1;
+                        }
+
+                        
+                        await Clients.Caller.SendAsync("Loser");
+                        await Clients.OthersInGroup(sessionID).SendAsync("Winner");
+
+
+                       
+                        _player.TryGetValue(connectionOpposite, out var opposite);
+                        playersur.Status = PlayerState.InRoom;
+                        opposite.Status = PlayerState.InRoom;
+
+                        _player.AddOrUpdate(connectionOpposite, opposite, (k, v) => v = opposite);
+                        _player.AddOrUpdate(Context.ConnectionId, opposite, (k, v) => v = playersur);
+
+
+                    }
+
+                    // renew gamesession(table, currentplayer)
+                    session.CurrentPlayer = session.Player1;
+                    session.Board = new string[15, 15];
+                    _sessions.AddOrUpdate(sessionID, session, (k, v) => v = session);
+                    LogUtil.LogMessage("AccountId : "+accid + " has surrender , game session : "+sessionID);
                 }
             }
-            if (_player.ContainsKey(Context.ConnectionId)) 
+            catch(Exception ex)
             {
-                _player.TryGetValue(Context.ConnectionId, out var playersur);
-                if(_sessions.TryGetValue(sessionID, out var session))
-                {
-                    bool IsUpdate = updateAfterEndGame(session, false);
-                    await Clients.Caller.SendAsync("Loser");
-                    await Clients.OthersInGroup(sessionID).SendAsync("Winner");
-
-
-                    string connectionOpposite = String.Empty;
-                    if (Context.ConnectionId.Equals(session.Player1))
-                    {
-                        connectionOpposite = session.Player2;
-                    }
-                    else
-                    {
-                        connectionOpposite = session.Player1;
-                    }
-                    _player.TryGetValue(connectionOpposite, out var opposite);
-                    playersur.Status = PlayerState.InRoom;
-                    opposite.Status = PlayerState.InRoom;
-
-                    _player.AddOrUpdate(connectionOpposite, opposite, (k, v) => v = opposite);
-                    _player.AddOrUpdate(Context.ConnectionId, opposite, (k, v) => v = playersur);
-
-
-                }
-
-                // renew gamesession(table, currentplayer)
-                session.CurrentPlayer = session.Player1;
-                session.Board = new string[15, 15];
-                _sessions.AddOrUpdate(sessionID, session, (k, v) => v = session);
+                LogUtil.LogFailed(ex);
             }
+            
         }
     }
 }

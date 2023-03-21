@@ -2,9 +2,11 @@
 using Caro.Game.DBAccess.Factory;
 using Caro.Game.DBAccess.Model;
 using Caro.Game.DTOs;
+using Caro.Game.Utilts;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.IdentityModel.Tokens;
+using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using System;
 using System.IdentityModel.Tokens.Jwt;
@@ -68,6 +70,8 @@ namespace Caro.Game.Controllers
                         Token = tokenRes,
                         AccountId = Dbres.Data
                     };
+
+                    LogUtil.LogAuthen("Login : "+ JsonConvert.SerializeObject(response));
                 }
                 catch (Exception ex)
                 {
@@ -76,6 +80,7 @@ namespace Caro.Game.Controllers
                     {
                         message = ex.Message.ToString()
                     };
+                    LogUtil.LogFailed(ex);
                 }
             }
             return Ok(response);

@@ -1,5 +1,6 @@
 ﻿using Caro.Game.DBAccess.DAO;
 using Caro.Game.DBAccess.DAOImpl;
+using Caro.Game.Utilts;
 
 namespace Caro.Game.DBAccess.Factory
 {

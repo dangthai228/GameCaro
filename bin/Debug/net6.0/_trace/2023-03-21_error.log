@@ -1,0 +1,4 @@
+2023-03-21 14:55:04.5922 ERROR 	<MakeMove>d__16.MoveNext 
+Index was outside the bounds of the array.
+   at Caro.Game.Hubs.CaroHub.CheckWin(String[,] board, String player) in C:\Users\Admin\Documents\Github\GameCaro\GameCaro\Hubs\CaroHub.cs:line 104
+   at Caro.Game.Hubs.CaroHub.MakeMove(Int32 row, Int32 col) in C:\Users\Admin\Documents\Github\GameCaro\GameCaro\Hubs\CaroHubMove.cs:line 55

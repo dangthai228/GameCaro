@@ -89,91 +89,27 @@ namespace Caro.Game.Hubs
 
         private bool CheckWin(string[,] board, string player)
         {
-            // check rows
-            for (int row = 0; row < 15; row++)
+            for(int i= 0;i<15;i++)
             {
-                int count = 0;
-                for (int col = 0; col < 15; col++)
+                for(int j= 0;j<15;j++)
                 {
-                    if (board[row, col] != player)
-                    {
-                        count = 0;
-                        break;
-                    }
-                    else
-                    {
-                        count++;
-                        if (count == 5)
-                        {
-                            return true;
-                        }
-                    }
-                }
+                    
+                    if (i <= 10 && board[i, j] == board[i + 1, j] && board[i, j] == board[i + 2, j]
+                        && board[i, j] == board[i + 3, j] && board[i, j] == board[i + 4, j]
+                        && board[i, j] == player) return true;
 
-                
-            }
+                    if ( i<=10 && j<= 10 && board[i, j] == board[i + 1, j + 1] && board[i, j] == board[i + 2, j + 2]
+                    && board[i, j] == board[i + 3, j + 3] && board[i, j] == board[i + 4, j + 4]
+                    && board[i, j] == player) return true;
 
-            // check columns
-            for (int col = 0; col < 15; col++)
-            {
-                int count = 0;
-                for (int row = 0; row < 15; row++)
-                {
-                    if (board[row, col] != player)
-                    {
-                        count = 0;
-                        break;
-                    }
-                    else
-                    {
-                        count++;
-                        if (count == 5)
-                        {
-                            return true;
-                        }
-                    }
-                }
-            }
+                    if ( i>=4 && j<=10 && board[i, j] == board[i - 1, j + 1] && board[i, j] == board[i - 2, j + 2]
+                    && board[i, j] == board[i - 3, j + 3] && board[i, j] == board[i - 4, j + 4]
+                    && board[i, j] == player) return true;
 
-            // check diagonal
-
-            for (int i = 0; i < 15; i++)
-            {
-                int count = 0;
-                if (board[i, i] != player)
-                {
-                    count = 0;
-                    break;
-                }
-                else
-                {
-                    count++;
-                    if(count ==5 )
-                    {
-                        return true;
-                    }
-                }
-            }
-
-
-            // check anti-diagonal
-
-
-            for (int i = 0; i < 15; i++)
-            {
-                int count = 0;
-                if (board[i, 14 - i] != player)
-                {
-                    count = 0;
-                    break;
-                }
-                else
-                {
-                    count++;
-                    if (count == 5)
-                    {
-                        return true;
-                    }
+                    if (j<= 10 && board[i, j] == board[i, j + 1] && board[i, j] == board[i, j + 2]
+                    && board[i, j] == board[i, j + 3] && board[i, j] == board[i, j + 4]
+                    && board[i, j] == player) return true;
+                    
                 }
             }
             return false;
@@ -191,7 +127,6 @@ namespace Caro.Game.Hubs
                     }
                 }
             }
-
             return true;
         }
 
