@@ -24,5 +24,7 @@ namespace Caro.Game.DBAccess.DAO
         public abstract List<UseItem> getListUseItem (long accountID);
 
         public abstract List<Inventory> getInventory(long accountID);
+
+        public abstract List<ShopItem> GetShop();
     }
 }

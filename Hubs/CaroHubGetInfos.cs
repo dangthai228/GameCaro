@@ -1,4 +1,7 @@
-﻿using Caro.Game.Session;
+﻿using Caro.Game.DBAccess.DAOImpl;
+using Caro.Game.DBAccess.Model;
+using Caro.Game.Models;
+using Caro.Game.Session;
 using Caro.Game.Utilts;
 using Microsoft.AspNetCore.SignalR;
 using System;
@@ -46,6 +49,21 @@ namespace Caro.Game.Hubs
                 }
             }
             await Clients.Caller.SendAsync("GetSession", listsessionId);
+        }
+
+        public async Task GetShop()
+        {
+            try
+            {
+                long accid = AccountClaim.getAccountID(Context);
+                List<ShopItem> listshop = gameDAO.GetShop();
+                await Clients.Caller.SendAsync("GetShop", listshop);
+            }
+            catch( Exception ex)
+            {
+                LogUtil.LogFailed(ex);  
+            }
+            
         }
     }
 }

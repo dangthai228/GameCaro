@@ -2,6 +2,7 @@
 using Caro.Game.DBAccess.Model;
 using Caro.Game.Models;
 using Caro.Game.Session;
+using Caro.Game.Utilts;
 using MySql.Data.MySqlClient;
 using MySqlX.XDevAPI.Common;
 using System;
@@ -147,6 +148,7 @@ namespace Caro.Game.DBAccess.DAOImpl
             catch (Exception ex)
             {
                 result = false;
+                LogUtil.LogFailed(ex);
             }
             return result;
         }
@@ -178,6 +180,7 @@ namespace Caro.Game.DBAccess.DAOImpl
             }
             catch (Exception ex)
             {
+                LogUtil.LogFailed(ex);
                 result = false;
             }
             return result;
@@ -219,6 +222,45 @@ namespace Caro.Game.DBAccess.DAOImpl
             }
             catch (Exception ex)
             {
+                LogUtil.LogFailed(ex);
+                return null;
+            }
+        }
+
+        public override List<ShopItem> GetShop()
+        {
+            List<ShopItem> _list = new List<ShopItem>();
+            MySqlDataReader rd;
+            MySqlConnection con = new MySqlConnection(this.appSettings.ConnectionString.ToString());
+            try
+            {
+                MySqlCommand cmd = new MySqlCommand("sp_Getshop", con);
+                con.Open();
+                cmd.CommandType = CommandType.StoredProcedure;
+                rd = cmd.ExecuteReader();
+                if (rd.HasRows)
+                {
+                    while (rd.Read())
+                    {
+                        ShopItem _item = new ShopItem();
+                        _item.ItemId = rd.GetInt32("id");
+                        _item.Name = rd.GetString("name");
+                        _item.Description = rd.GetString("description");
+                        _item.Gold = rd.GetInt32("gold");
+                        _item.BrrGold = rd.GetInt32("brrgold");
+                        _item.Type = rd.GetString("type");
+                        _item.IsBought = rd.GetInt32("isbought");
+                        _item.IsBrr = rd.GetInt32("Isborrowed");
+                        _list.Add(_item);
+                    }
+                }
+                rd.Close();
+                con.Close();
+                return _list;
+            }
+            catch (Exception ex)
+            {
+                LogUtil.LogFailed(ex);
                 return null;
             }
         }

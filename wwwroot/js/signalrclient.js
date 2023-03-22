@@ -1,4 +1,6 @@
-﻿var endpointValue;
+﻿//const { write } = require("../lib/signalr-protocol-msgpack/dist/browser/signalr-protocol-msgpack");
+
+var endpointValue;
 var accessToken = '';
 var connection = {};
 var btnConnect;
@@ -19,6 +21,7 @@ var btnReady;
 var btnDanhCo;
 var EndPoints;
 var btnKick;
+var btnGetShop;
 var output;
 var userInput;
 var pwInput;
@@ -84,7 +87,7 @@ function loginHttp() {
                 btnGetRooms.disabled = false;
 
                 btnSend.disabled = true;
-
+                btnGetShop.disabled = false;
                 btnConnect.disabled = true;
                 endpoint.disabled = true;
             })
@@ -250,6 +253,10 @@ function loginHttp() {
                 self.writeToScreen('Opposite check  ' + ` ${value}` + '  row ' + `${row}` + ' col ' + `${col}`);
                 btnDanhCo.disabled = false;
             });
+
+            connection.on('GetShop', (listitems) => {
+                writeToScreen('Shop List Items : ' + `${JSON.stringify(listitems)}`);
+            });
         }
 
     };
@@ -301,7 +308,10 @@ function joinRoom() {
     else {
         writeToScreen("SessionId is null ...");
     }
+}
 
+function getShop() {
+    connection.invoke("GetShop");
 }
 
 function CreateRoom() {
@@ -397,4 +407,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     btnclear = document.getElementById("btnclear");
     btnclear.disabled = true;
+
+    btnGetShop = document.getElementById("btnGetShop");
+    btnGetShop.disabled = true;
 }, false);
