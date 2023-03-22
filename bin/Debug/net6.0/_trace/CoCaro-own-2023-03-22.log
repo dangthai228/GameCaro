@@ -1,0 +1,37 @@
+2023-03-22 10:43:02.4271|0|INFO|Authen|:	AuthController.Authenticate 	Login : {"status":1,"data":{"Token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1bmlxdWVfbmFtZSI6IjIiLCJuYmYiOjE2Nzk0NTY1ODEsImV4cCI6MTY3OTQ3NDU4MSwiaWF0IjoxNjc5NDU2NTgxfQ.7EEl4tmOURYkru2Sm3c2tCgGU9gCW7tkaY1HitfH5AE","AccountId":2}} |url: |action: |
+2023-03-22 10:43:14.1221|0|INFO|Authen|:	AuthController.Authenticate 	Login : {"status":1,"data":{"Token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1bmlxdWVfbmFtZSI6IjIiLCJuYmYiOjE2Nzk0NTY1OTQsImV4cCI6MTY3OTQ3NDU5NCwiaWF0IjoxNjc5NDU2NTk0fQ.t5CwGSpVnMs4T0kM9WdLVh_CRB8laDQkNQ12NT1OD0o","AccountId":2}} |url: |action: |
+2023-03-22 10:47:16.3203|0|INFO|Authen|:	AuthController.Authenticate 	Login : {"status":1,"data":{"Token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1bmlxdWVfbmFtZSI6IjIiLCJuYmYiOjE2Nzk0NTY4MzYsImV4cCI6MTY3OTQ3NDgzNiwiaWF0IjoxNjc5NDU2ODM2fQ.s9LhCXnL-H9-ZVnmhBK0FyEcfqZSfa3KKvPd8SaHdJA","AccountId":2}} |url: |action: |
+2023-03-22 10:47:19.8735|0|INFO|Trace|:	<OnConnectedAsync>d__19.MoveNext 	AccountId : 2 connect to SignalR success !!! |url: |action: |
+2023-03-22 10:48:25.9608|0|INFO|Authen|:	AuthController.Authenticate 	Login : {"status":1,"data":{"Token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1bmlxdWVfbmFtZSI6IjIiLCJuYmYiOjE2Nzk0NTY5MDUsImV4cCI6MTY3OTQ3NDkwNSwiaWF0IjoxNjc5NDU2OTA1fQ.iL8tb2rSWg6hjEsZ_Q9WPmdercDGxbIlpAIaJFgMmII","AccountId":2}} |url: |action: |
+2023-03-22 10:48:28.4179|0|INFO|Trace|:	<OnConnectedAsync>d__19.MoveNext 	Connect to signalR Failed due to accountId = 2 is Already Online  |url: |action: |
+2023-03-22 10:48:46.8774|0|INFO|Trace|:	<OnDisconnectedAsync>d__18.MoveNext 	Player AccountId : 2  has disconnected |url: |action: |
+2023-03-22 15:59:05.3344|0|INFO|Authen|:	AuthController.Authenticate 	Login : {"status":1,"data":{"Token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1bmlxdWVfbmFtZSI6IjQiLCJuYmYiOjE2Nzk0NzU1NDQsImV4cCI6MTY3OTQ5MzU0NCwiaWF0IjoxNjc5NDc1NTQ0fQ.sZxHbNzfdVgbw2wx41tjC-m2cCkZUmrptC4IiVB4cRQ","AccountId":4}} |url: |action: |
+2023-03-22 15:59:06.3071|0|INFO|Trace|:	<OnConnectedAsync>d__20.MoveNext 	AccountId : 4 connect to SignalR success !!! |url: |action: |
+2023-03-22 15:59:14.5729|0|ERROR|TraceError|	GameDAOImpl.BuyItem 
+Parameter 'p_account1' not found in the collection.
+   at MySql.Data.MySqlClient.MySqlParameterCollection.GetParameterFlexible(String parameterName, Boolean throwOnNotFound)
+   at MySql.Data.MySqlClient.StoredProcedure.GetAndFixParameter(String spName, MySqlSchemaRow param, Boolean realAsFloat, MySqlParameter returnParameter)
+   at MySql.Data.MySqlClient.StoredProcedure.CheckParameters(String spName)
+   at MySql.Data.MySqlClient.StoredProcedure.Resolve(Boolean preparing)
+   at MySql.Data.MySqlClient.MySqlCommand.ExecuteReader(CommandBehavior behavior)
+   at MySql.Data.MySqlClient.MySqlCommand.ExecuteReader()
+   at MySql.Data.MySqlClient.MySqlCommand.ExecuteNonQuery()
+   at Caro.Game.DBAccess.DAOImpl.GameDAOImpl.BuyItem(Int64 accid, Int32 itemid, Int32 daybrr) in C:\Users\Admin\Documents\Github\GameCaro\GameCaro\DBAccess\DAOImpl\GameDAOImpl.cs:line 284 |url: |action: |
+2023-03-22 15:59:14.5838|0|INFO|Trace|:	<BuyItem>d__9.MoveNext 	Action failed when AccountId = 4 buying iditem = 1 |url: |action: |
+2023-03-22 16:01:06.1720|0|INFO|Trace|:	<OnDisconnectedAsync>d__19.MoveNext 	Player AccountId : 4  has disconnected |url: |action: |
+2023-03-22 16:01:23.4347|0|INFO|Authen|:	AuthController.Authenticate 	Login : {"status":1,"data":{"Token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1bmlxdWVfbmFtZSI6IjQiLCJuYmYiOjE2Nzk0NzU2ODMsImV4cCI6MTY3OTQ5MzY4MywiaWF0IjoxNjc5NDc1NjgzfQ.cvvrjxhwlB6FiCZY4goamSP4AiAkF7P8az7kga8A6s4","AccountId":4}} |url: |action: |
+2023-03-22 16:01:24.2921|0|INFO|Trace|:	<OnConnectedAsync>d__20.MoveNext 	AccountId : 4 connect to SignalR success !!! |url: |action: |
+2023-03-22 16:01:30.6760|0|INFO|Trace|:	<BuyItem>d__9.MoveNext 	AccountId = 4 has bought itemid = 1 |url: |action: |
+2023-03-22 16:07:58.7276|0|INFO|Trace|:	<OnDisconnectedAsync>d__19.MoveNext 	Player AccountId : 4  has disconnected |url: |action: |
+2023-03-22 17:18:01.7957|0|INFO|Authen|:	AuthController.Authenticate 	Login : {"status":1,"data":{"Token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1bmlxdWVfbmFtZSI6IjQiLCJuYmYiOjE2Nzk0ODAyODEsImV4cCI6MTY3OTQ5ODI4MSwiaWF0IjoxNjc5NDgwMjgxfQ.LlMFs0Ujz5Bnabplynaix-DAuRXNYPjeC-OyAi8LhsM","AccountId":4}} |url: |action: |
+2023-03-22 17:18:05.2859|0|INFO|Trace|:	<OnConnectedAsync>d__20.MoveNext 	AccountId : 4 connect to SignalR success !!! |url: |action: |
+2023-03-22 17:18:15.7210|0|ERROR|TraceError|	GameDAOImpl.BuyItem 
+Unable to cast object of type 'MySql.Data.MySqlClient.MySqlParameter' to type 'System.IConvertible'.
+   at System.Convert.ToInt32(Object value)
+   at Caro.Game.DBAccess.DAOImpl.GameDAOImpl.BuyItem(Int64 accid, Int32 itemid, Int32 daybrr) in C:\Users\Admin\Documents\Github\GameCaro\GameCaro\DBAccess\DAOImpl\GameDAOImpl.cs:line 285 |url: |action: |
+2023-03-22 17:18:15.7405|0|INFO|Trace|:	<BuyItem>d__9.MoveNext 	Action failed when AccountId = 4 buying iditem = 3 |url: |action: |
+2023-03-22 17:19:11.9071|0|INFO|Trace|:	<OnDisconnectedAsync>d__19.MoveNext 	Player AccountId : 4  has disconnected |url: |action: |
+2023-03-22 17:19:50.5210|0|INFO|Authen|:	AuthController.Authenticate 	Login : {"status":1,"data":{"Token":"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1bmlxdWVfbmFtZSI6IjQiLCJuYmYiOjE2Nzk0ODAzODksImV4cCI6MTY3OTQ5ODM4OSwiaWF0IjoxNjc5NDgwMzg5fQ.KX4XIXnFr3NUtBjqywY90CMaieRuy2kAbYb2nV9YXRI","AccountId":4}} |url: |action: |
+2023-03-22 17:19:51.7563|0|INFO|Trace|:	<OnConnectedAsync>d__20.MoveNext 	AccountId : 4 connect to SignalR success !!! |url: |action: |
+2023-03-22 17:20:32.9536|0|INFO|Trace|:	<BuyItem>d__9.MoveNext 	AccountId = 4 has bought itemid = 7 |url: |action: |
+2023-03-22 17:20:40.0569|0|INFO|Trace|:	<OnDisconnectedAsync>d__19.MoveNext 	Player AccountId : 4  has disconnected |url: |action: |

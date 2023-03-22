@@ -1,0 +1,14 @@
+2023-03-22 15:59:14.5729 ERROR 	GameDAOImpl.BuyItem 
+Parameter 'p_account1' not found in the collection.
+   at MySql.Data.MySqlClient.MySqlParameterCollection.GetParameterFlexible(String parameterName, Boolean throwOnNotFound)
+   at MySql.Data.MySqlClient.StoredProcedure.GetAndFixParameter(String spName, MySqlSchemaRow param, Boolean realAsFloat, MySqlParameter returnParameter)
+   at MySql.Data.MySqlClient.StoredProcedure.CheckParameters(String spName)
+   at MySql.Data.MySqlClient.StoredProcedure.Resolve(Boolean preparing)
+   at MySql.Data.MySqlClient.MySqlCommand.ExecuteReader(CommandBehavior behavior)
+   at MySql.Data.MySqlClient.MySqlCommand.ExecuteReader()
+   at MySql.Data.MySqlClient.MySqlCommand.ExecuteNonQuery()
+   at Caro.Game.DBAccess.DAOImpl.GameDAOImpl.BuyItem(Int64 accid, Int32 itemid, Int32 daybrr) in C:\Users\Admin\Documents\Github\GameCaro\GameCaro\DBAccess\DAOImpl\GameDAOImpl.cs:line 284
+2023-03-22 17:18:15.7210 ERROR 	GameDAOImpl.BuyItem 
+Unable to cast object of type 'MySql.Data.MySqlClient.MySqlParameter' to type 'System.IConvertible'.
+   at System.Convert.ToInt32(Object value)
+   at Caro.Game.DBAccess.DAOImpl.GameDAOImpl.BuyItem(Int64 accid, Int32 itemid, Int32 daybrr) in C:\Users\Admin\Documents\Github\GameCaro\GameCaro\DBAccess\DAOImpl\GameDAOImpl.cs:line 285

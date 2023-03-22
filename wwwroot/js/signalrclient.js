@@ -7,12 +7,15 @@ var btnConnect;
 var btnGetMyInfo;
 var txtrow;
 var txtcol;
+var txtidItem;
+var txtdayBrr;
 var txtbetValue;
 var txtSessionId;
 var txtnameTable;
 var btnGetInventory;
 var btnGetRooms;
 var btnCreateRoom;
+var btnBuyItem;
 var btnclear;
 var btnJoinRoom;
 var btnLeaveRoom;
@@ -257,6 +260,14 @@ function loginHttp() {
             connection.on('GetShop', (listitems) => {
                 writeToScreen('Shop List Items : ' + `${JSON.stringify(listitems)}`);
             });
+
+            connection.on('BuySuccess', (iditem) => {
+                writeToScreen("Buy successful Item id : " + `${iditem}`);
+            });
+
+            connection.on('BuyFailed', (iditem) => {
+                writeToScreen("buy itemId: " + `${iditem}` +" failed");
+            });
         }
 
     };
@@ -352,7 +363,7 @@ function surrender() {
 function danhCo() {
     txtrow = parseInt(document.getElementById('txtToaDoX').value);
     txtcol = parseInt(document.getElementById('txtToaDoY').value);
-    if (txtrow !== null && txtcol !== null) {
+    if (txtrow !== '' && txtcol !== '') {
         connection.invoke('MakeMove', txtrow, txtcol);
         btnDanhCo.disabled = true;
     }
@@ -360,6 +371,15 @@ function danhCo() {
         writeToScreen("Lack of information ...");
     }
 
+}
+
+function BuyItem() {
+    txtidItem = parseInt(document.getElementById('txtidItem').value);
+    txtdayBrr = parseInt(document.getElementById('txtdayBrr').value);
+    if (txtidItem !== '' && txtdayBrr !== '') {
+        connection.invoke("BuyItem", txtidItem, txtdayBrr);
+    }
+    
 }
 
 function Kick() {
@@ -371,6 +391,7 @@ function Kick() {
 document.addEventListener('DOMContentLoaded', function () {
     output = document.getElementById("rightOutput");
     btnSend = document.getElementById("btnSend");
+
 
     btnConnect = document.getElementById("btnConnect");
     btnConnect.disabled = true;
@@ -410,4 +431,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     btnGetShop = document.getElementById("btnGetShop");
     btnGetShop.disabled = true;
+
+    btnBuyItem = document.getElementById("btnBuyItem");
+    btnBuyItem.disabled = false;
 }, false);

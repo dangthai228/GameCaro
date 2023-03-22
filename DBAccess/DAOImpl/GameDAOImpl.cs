@@ -264,5 +264,37 @@ namespace Caro.Game.DBAccess.DAOImpl
                 return null;
             }
         }
+
+        public override bool BuyItem(long accid, int itemid, int daybrr)
+        {
+            bool result = false;
+            MySqlConnection con = new MySqlConnection(this.appSettings.ConnectionString.ToString());
+            try
+            {
+                var _params = new MySqlParameter[5];
+                _params[0] = new MySqlParameter("p_accountId", accid);
+                _params[1] = new MySqlParameter("p_ItemId", itemid);
+                _params[2] = new MySqlParameter("p_Days", daybrr);
+                _params[3] = new MySqlParameter("p_ResponseStatus", MySqlDbType.Int64) { Direction = ParameterDirection.Output };
+                _params[4] = new MySqlParameter("p_ResponseText", MySqlDbType.VarChar) { Direction = ParameterDirection.Output };
+                MySqlCommand cmd = new MySqlCommand("BuyItem", con);
+                con.Open();
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddRange(_params);
+                cmd.ExecuteNonQuery();
+                if (Convert.ToInt32(_params[3].Value.ToString())== 1)
+                {
+                    result = true;
+                }
+                con.Close();
+                return result;
+            }
+            catch (Exception ex)
+            {
+                LogUtil.LogFailed(ex);
+                result = false;
+            }
+            return result;
+        }
     }
 }

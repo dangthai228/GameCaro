@@ -11,7 +11,7 @@
  Target Server Version : 80031
  File Encoding         : 65001
 
- Date: 17/03/2023 22:46:58
+ Date: 22/03/2023 17:21:48
 */
 
 SET NAMES utf8mb4;
@@ -27,7 +27,7 @@ CREATE TABLE `coinlevel`  (
   `LvVip` int NOT NULL,
   `Gold` int NULL DEFAULT NULL,
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 10 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 11 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of coinlevel
@@ -80,6 +80,9 @@ INSERT INTO `inventory` VALUES (12, 3, 1, '2023-03-02 03:22:45', 1, NULL);
 INSERT INTO `inventory` VALUES (13, 3, 5, '2023-03-02 03:53:34', 0, '2023-03-05 03:53:34');
 INSERT INTO `inventory` VALUES (14, 1, 3, '2023-03-02 04:42:45', 0, NULL);
 INSERT INTO `inventory` VALUES (15, 1, 8, '2023-03-02 04:42:45', 0, NULL);
+INSERT INTO `inventory` VALUES (16, 4, 1, '2023-03-22 16:01:30', 0, NULL);
+INSERT INTO `inventory` VALUES (17, 4, 3, '2023-03-22 17:18:15', 0, NULL);
+INSERT INTO `inventory` VALUES (18, 4, 7, '2023-03-22 17:20:32', 0, NULL);
 
 -- ----------------------------
 -- Table structure for log_err
@@ -92,7 +95,7 @@ CREATE TABLE `log_err`  (
   `NameFunction` varchar(55) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL COMMENT 'Tên chức năng',
   `TimeCreate` datetime(0) NOT NULL COMMENT 'Thời gian ',
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 78 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 79 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of log_err
@@ -188,7 +191,7 @@ CREATE TABLE `logguild`  (
   `Message` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL COMMENT 'Nội dung log',
   `Time` datetime(0) NOT NULL COMMENT 'Thời gian tạo',
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 134 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 135 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of logguild
@@ -331,7 +334,7 @@ CREATE TABLE `logtransaction`  (
   `IditemBuy` int NULL DEFAULT NULL,
   `IdInventoryUse` int NULL DEFAULT NULL,
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 55 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 56 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of logtransaction
@@ -426,9 +429,9 @@ CREATE TABLE `tblaccount`  (
 -- Records of tblaccount
 -- ----------------------------
 INSERT INTO `tblaccount` VALUES (1, 'thaind228', 'ngodangthai22820001', 'Thaivippro', '2000-08-22', 'Nam', 6945000, 99, '150000', 5, 1, 0, 'challenger', 1200, 270, 76, 15, 361, 580, '2020-03-21 13:17:15', '2023-01-06 10:45:12', 1);
-INSERT INTO `tblaccount` VALUES (2, 'caychay', 'nongdan', '12345', '2000-01-01', 'Nam', 4490000, 15, '250', 0, 0, 0, 'Broze', 170, 8, 1, 0, 6, 0, '2023-01-11 14:37:56', '2023-01-11 14:38:00', 1);
+INSERT INTO `tblaccount` VALUES (2, 'caychay', 'nongdan', '12345', '2000-01-01', 'Nam', 4490000, 15, '250', 0, 0, 0, 'Broze', 170, 12, 5, 0, 6, 0, '2023-01-11 14:37:56', '2023-01-11 14:38:00', 1);
 INSERT INTO `tblaccount` VALUES (3, 'account3', 'thaivip', '12345678', '1929-02-23', 'Nam', 661300, 50, '15000', 0, 0, 0, 'bronze', 120, 6, 1, 0, 7, 0, '2023-02-02 17:20:58', '2023-02-02 17:21:03', 1);
-INSERT INTO `tblaccount` VALUES (4, 'acc4', '123456', '123456', '2023-01-30', 'Nữ', 14985000, 10, '45000', 0, 0, 0, 'bronze', 150, 6, 9, 2, 14, 0, '2023-02-07 16:23:09', '2023-02-07 16:23:12', 1);
+INSERT INTO `tblaccount` VALUES (4, 'acc4', '123456', '123456', '2023-01-30', 'Nữ', 14119000, 10, '45000', 0, 0, 0, 'bronze', 150, 10, 13, 2, 14, 0, '2023-02-07 16:23:09', '2023-02-07 16:23:12', 1);
 INSERT INTO `tblaccount` VALUES (5, 'acc5', 'napvip2k', 'thaivip2k', '2003-07-23', 'Nam', 441000, 1, '0', 0, 0, 0, 'Gold', 1500, 7, 1, 12, 20, 0, '2023-02-07 16:27:48', '2023-02-20 16:27:54', 1);
 INSERT INTO `tblaccount` VALUES (6, 'acc6', 'accountso6', 'account', '2023-02-14', 'Nam', 800000, 2, '12', 0, 0, 0, 'Gold', 1000, 15, 2, 10, 27, 0, '2023-02-07 16:28:58', '2023-02-06 16:29:01', 1);
 INSERT INTO `tblaccount` VALUES (7, 'account7', 'account7', 'testguild', '2023-02-01', 'Nữ', 56420, 12, '3522', 0, 0, 0, 'Iron', 500, 10, 2, 1, 13, 0, '2023-02-01 16:31:57', '2023-02-02 16:32:00', 1);
@@ -445,7 +448,7 @@ CREATE TABLE `tblconvertvalue`  (
   `ConvertTo` varchar(25) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL,
   `Value` int NOT NULL,
   PRIMARY KEY (`Id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 1 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 2 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of tblconvertvalue
@@ -466,7 +469,7 @@ CREATE TABLE `tblguild`  (
   `Nofication` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL COMMENT 'Thông báo của hội',
   `CreateTime` datetime(0) NOT NULL COMMENT 'Ngày tạo',
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 3 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 4 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of tblguild
@@ -490,7 +493,7 @@ CREATE TABLE `tblguildaccount`  (
   PRIMARY KEY (`id`) USING BTREE,
   INDEX `idconghoi`(`idguild`) USING BTREE,
   CONSTRAINT `idconghoi` FOREIGN KEY (`idguild`) REFERENCES `tblguild` (`id`) ON DELETE RESTRICT ON UPDATE RESTRICT
-) ENGINE = InnoDB AUTO_INCREMENT = 15 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 16 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of tblguildaccount
@@ -513,7 +516,7 @@ CREATE TABLE `tblguildservice`  (
   `TimeAdd` datetime(0) NOT NULL COMMENT 'Thời gian thêm',
   `Number` int NULL DEFAULT NULL COMMENT 'Số lượng mở rộng',
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 4 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 5 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of tblguildservice
@@ -581,7 +584,7 @@ CREATE TABLE `tblrollguild`  (
   `id` int NOT NULL AUTO_INCREMENT,
   `Rollname` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NOT NULL COMMENT 'Tên quyền ',
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 4 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 5 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of tblrollguild
@@ -601,7 +604,7 @@ CREATE TABLE `tblsale`  (
   `saleoff` int NOT NULL,
   PRIMARY KEY (`id`) USING BTREE,
   UNIQUE INDEX `id_UNIQUE`(`id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 10 CHARACTER SET = utf8mb3 COLLATE = utf8mb3_general_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 11 CHARACTER SET = utf8mb3 COLLATE = utf8mb3_general_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of tblsale
@@ -644,7 +647,7 @@ CREATE TABLE `tbltransaction`  (
   `type` varchar(25) CHARACTER SET utf8mb3 COLLATE utf8mb3_general_ci NOT NULL,
   PRIMARY KEY (`id`) USING BTREE,
   UNIQUE INDEX `id_UNIQUE`(`id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 8 CHARACTER SET = utf8mb3 COLLATE = utf8mb3_general_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 9 CHARACTER SET = utf8mb3 COLLATE = utf8mb3_general_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of tbltransaction
@@ -667,7 +670,7 @@ CREATE TABLE `tbltype`  (
   `name` varchar(45) CHARACTER SET utf8mb3 COLLATE utf8mb3_general_ci NOT NULL,
   PRIMARY KEY (`id`) USING BTREE,
   UNIQUE INDEX `id_UNIQUE`(`id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 6 CHARACTER SET = utf8mb3 COLLATE = utf8mb3_general_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 7 CHARACTER SET = utf8mb3 COLLATE = utf8mb3_general_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of tbltype
@@ -773,7 +776,7 @@ delimiter ;
 -- ----------------------------
 DROP PROCEDURE IF EXISTS `BuyItem`;
 delimiter ;;
-CREATE PROCEDURE `BuyItem`(IN p_accountId INT,IN p_ItemId INT,IN p_Days INT, OUT p_ResponseText varchar(250),OUT p_ResponseStatus INT)
+CREATE PROCEDURE `BuyItem`(IN p_accountId INT,IN p_ItemId INT,IN p_Days  INT, OUT p_ResponseText varchar(250),OUT p_ResponseStatus INT)
 while_proc:BEGIN
 
 -- khai báo mã lỗi
@@ -914,6 +917,7 @@ END;
      end if;
 	
 		COMMIT;
+		
     SET p_ResponseText ="Mua Item thành công";
 		SET p_ResponseStatus = v_success;
 END
@@ -1683,24 +1687,6 @@ while_proc : BEGIN
 					
 			SET p_code = 0;
 			SET p_message = "Thành công";
-END
-;;
-delimiter ;
-
--- ----------------------------
--- Procedure structure for getshop
--- ----------------------------
-DROP PROCEDURE IF EXISTS `getshop`;
-delimiter ;;
-CREATE PROCEDURE `getshop`()
-BEGIN
-		
-		
-		 SELECT t.id,  t.name,t.description,t.gold,t.brrgold,
-		(Select n.name from tbltype n where n.id= t.idtype ) as type,t.isbought,t.Isborrowed from tblitem as t where  t.isvalid =1;
-		
-		
-		
 END
 ;;
 delimiter ;
@@ -2595,7 +2581,26 @@ DROP PROCEDURE IF EXISTS `sp_GetInventory`;
 delimiter ;;
 CREATE PROCEDURE `sp_GetInventory`(in p_accountid INT)
 BEGIN
-		Select i.id ,i.expired ,i.time ,t.description, t.`name` from inventory i , tblitem t WHERE i.idaccount = p_accountid and i.iditem = t.id ;
+		Select i.id ,i.expired ,i.time ,t.description, t.`name` from inventory i , tblitem t WHERE i.idaccount = p_accountid and i.iditem = t.id 
+		and (i.expired is null or i.expired > NOW()) ;
+END
+;;
+delimiter ;
+
+-- ----------------------------
+-- Procedure structure for Sp_Getshop
+-- ----------------------------
+DROP PROCEDURE IF EXISTS `Sp_Getshop`;
+delimiter ;;
+CREATE PROCEDURE `Sp_Getshop`()
+BEGIN
+		
+		
+		 SELECT t.id,  t.name,t.description,t.gold,t.brrgold,
+		(Select n.name from tbltype n where n.id= t.idtype ) as type,t.isbought,t.Isborrowed from tblitem as t where  t.isvalid =1;
+		
+		
+		
 END
 ;;
 delimiter ;

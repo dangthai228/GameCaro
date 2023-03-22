@@ -22,7 +22,7 @@ namespace Caro.Game.Hubs
         // key la connectionID va value la PlayerCaro 
         private static readonly ConcurrentDictionary<string, PlayerCaro>  _player = new ConcurrentDictionary<string, PlayerCaro>();
 
-
+        // key accid value list inventory
         private static readonly ConcurrentDictionary<long , List<Inventory> > _inventory = new ConcurrentDictionary<long , List<Inventory> >();
 
         private readonly IGameDAO gameDAO = AbstractFactoryDAO.Instance().CreateGameDAO(Startup.AppSettings);

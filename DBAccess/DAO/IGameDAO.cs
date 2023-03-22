@@ -26,5 +26,7 @@ namespace Caro.Game.DBAccess.DAO
         public abstract List<Inventory> getInventory(long accountID);
 
         public abstract List<ShopItem> GetShop();
+
+        public abstract bool BuyItem(long accid, int itemid, int daybrr);
     }
 }
